@@ -14,8 +14,8 @@
 
 ## 其他社区
 
-* G+ (https://plus.google.com/communities/101513261063592651175)
-* Twitter: (https://twitter.com/squidgfw)
+* G+ [谷歌社区](https://plus.google.com/communities/101513261063592651175)
+* Twitter: [推特](https://twitter.com/squidgfw)
 
 
 ## OPEN SOURCE LICENSES
