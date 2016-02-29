@@ -1,6 +1,7 @@
-## 最新版squid V2.0.0.12##
+## 最新版SquidProxy V2.0.0.12##
 
 
+* SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.12/squidproxy.exe)
 
 ===========
 ##特性##
