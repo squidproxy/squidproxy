@@ -299,33 +299,31 @@ namespace pac
 
         }
 
-        private void DeleteAdslSettting()
+        private void CancelProxySetting()
         {
 
-            string starupPath = Application.ExecutablePath;
-            //class Micosoft.Win32.RegistryKey. 表示Window注册表中项级节点,此类是注册表装.
-            RegistryKey loca1 = Registry.CurrentUser;
-            RegistryKey Adslrun = loca1.CreateSubKey(@"Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections");
-
-            //  RegistryKey subKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Internet Settings");
-            string[] keyValueNames = Adslrun.GetValueNames();
-
-            foreach (string keyValueName in keyValueNames)
-
+            try
             {
-
-                try
-                {
-                    Adslrun.DeleteValue(keyValueName);
-
-                }
-
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                RegistryKey registry =
+                    Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings",
+                        true);
+              
+                    registry.SetValue("ProxyEnable", 0);
+                    registry.SetValue("ProxyServer", "");
+                    registry.SetValue("AutoConfigURL", "");
+              
+                //Set AutoDetectProxy Off
+                IEAutoDetectProxy(false);
+                NotifyIE();
+                //Must Notify IE first, or the connections do not chanage
+                CopyProxySettingFromLan();
             }
-
+            catch (Exception e)
+            {
+      
+                // TODO this should be moved into views
+                MessageBox.Show("Failed to update registry");
+            }
         }
 
         private void DeleteLANSettting()
@@ -1128,7 +1126,7 @@ namespace pac
         void tested(object sender, EventArgs e)
         {
 
-            DeleteAdslSettting();
+            CancelProxySetting();
             notifyIcon1.Icon = null;
             notifyIcon1.Dispose();
             Application.DoEvents();
@@ -1325,15 +1323,7 @@ namespace pac
 
         }
 
-        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DeleteAdslSettting();
-            DeleteLANSettting();
-            notifyIcon1.Icon = null;
-            notifyIcon1.Dispose();
-            Application.DoEvents();
-            System.Environment.Exit(0);
-        }
+    
 
         private void RebootSystem_Click(object sender, EventArgs e)
         {
