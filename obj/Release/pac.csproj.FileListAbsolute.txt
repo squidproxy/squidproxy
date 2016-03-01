@@ -1,0 +1,8 @@
+F:\C#\SquidClient巴豆\pac\pac\bin\Release\pac.exe.config
+F:\C#\SquidClient巴豆\pac\pac\bin\Release\pac.exe
+F:\C#\SquidClient巴豆\pac\pac\bin\Release\pac.pdb
+F:\C#\SquidClient巴豆\pac\pac\obj\Release\pac.Form1.resources
+F:\C#\SquidClient巴豆\pac\pac\obj\Release\pac.Properties.Resources.resources
+F:\C#\SquidClient巴豆\pac\pac\obj\Release\pac.csproj.GenerateResource.Cache
+F:\C#\SquidClient巴豆\pac\pac\obj\Release\pac.exe
+F:\C#\SquidClient巴豆\pac\pac\obj\Release\pac.pdb
