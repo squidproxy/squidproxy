@@ -19,10 +19,16 @@
 * G+ [谷歌社区](https://plus.google.com/communities/101513261063592651175)
 * Twitter: [推特](https://twitter.com/squidgfw)
 
+## 原理
+
+数据缓存技术
+在一个若干人共同使用的"宿舍"(Squid服务器),A同学(相当于A浏览器或A设备) 从"图书馆"(Youtube等网站)借来的"书籍"(网站等视频资源).
+B同学(相当于B浏览器或B设备)不用在再跑去图书馆(远程网站)借这本书,直接在他们的宿舍(Squid服务器)阅读浏览借来的书籍即可.Squid会将这些视频数据保存在本地,供其他
+用户调用。
+这个从本地获取视频的效率，远比反复从图书馆来的效率更高! 这个就是Squid技术的原理!
 
 ## OPEN SOURCE LICENSES
 
-* shadowsocks-libev: [GPLv3](https://github.com/shadowsocks/shadowsocks-libev/blob/master/LICENSE)
 * tun2socks: [BSD](https://github.com/shadowsocks/badvpn/blob/shadowsocks-android/COPYING)
 * redsocks: [APL 2.0](https://github.com/shadowsocks/redsocks/blob/master/README)
 * OpenSSL: [OpenSSL](https://github.com/shadowsocks/openssl-android/blob/master/NOTICE)
