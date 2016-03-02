@@ -1,9 +1,9 @@
-## 最新版SquidProxy V2.0.0.12##
+## 最新版SquidProxy V2.0.0.13##
 
 
-* SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.12/squidproxy.exe)
+* SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.13/Squidproxy.exe)
 * 获取公共服务器 [进入](https://plus.google.com/communities/101513261063592651175)
-
+* 修正了退出后代理无法恢复的bug
 ===========
 ##特性##
 
