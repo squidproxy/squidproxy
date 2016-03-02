@@ -41,10 +41,12 @@ squid -z
 ### Build configuration file 创建配置文件,默认端口为25
 
 ```
-rm -fr /etc/squid/squid.conf
+rm -fr /etc/squid3/squid.conf
 wget --no-check-certificate -O /etc/squid3/squid.conf http://server/squid.conf
 
 ```
+
+
 
 ## 其他社区
 
