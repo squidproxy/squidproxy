@@ -1,4 +1,4 @@
-
+#The PAC by Flora PAC project!
     var hasOwnProperty = Object.hasOwnProperty;
     var iproxy ='DIRECT';
     var squidproxy =  "PROXY VPS-IP:25;";
