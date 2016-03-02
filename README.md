@@ -24,6 +24,7 @@ Debian/Ubuntu
 apt-get update 
 apt-get -y install squid3
 
+```
 ### Prepare execution folders 创建缓存文件
 
 ```
