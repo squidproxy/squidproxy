@@ -14,6 +14,37 @@
 - 基于Framework3.5框架开发
 - PAC模式部署,安装apache2服务到服务器,确保Squid服务和Apache2为同一服务器!
 
+## Server
+
+### Install
+
+Debian/Ubuntu
+
+```
+apt-get update 
+apt-get -y install squid3
+
+### Prepare execution folders 创建缓存文件
+
+```
+mkdir /var/log/squid
+mkdir /var/cache/squid
+mkdir /var/spool/squid
+chown -cR proxy /var/log/squid
+chown -cR proxy /var/cache/squid
+chown -cR proxy /var/spool/squid
+
+squid -z
+
+```
+### Build configuration file 创建配置文件,默认端口为25
+
+```
+rm -fr /etc/squid/squid.conf
+wget --no-check-certificate -O /etc/squid3/squid.conf http://server/squid.conf
+
+```
+
 ## 其他社区
 
 * G+ [谷歌社区](https://plus.google.com/communities/101513261063592651175)
