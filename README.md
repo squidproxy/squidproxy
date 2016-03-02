@@ -35,7 +35,7 @@ chown -cR proxy /var/log/squid
 chown -cR proxy /var/cache/squid
 chown -cR proxy /var/spool/squid
 
-squid -z
+squid3 -z
 
 ```
 ### Build configuration file For Debian 创建配置文件给Debian系统,默认端口为25
