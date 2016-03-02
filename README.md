@@ -38,7 +38,7 @@ chown -cR proxy /var/spool/squid
 squid -z
 
 ```
-### Build configuration file For Debian 创建配置文件,默认端口为25
+### Build configuration file For Debian 创建配置文件给Debian系统,默认端口为25
 
 ```
 rm -fr /etc/squid3/squid.conf
@@ -46,7 +46,7 @@ wget --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercont
 
 ```
 
-### Build configuration file For Ubuntu 创建配置文件,默认端口为25
+### Build configuration file For Ubuntu 创建配置文件给Ubuntu系统,默认端口为25
 
 ```
 rm -fr /etc/squid3/squid.conf
