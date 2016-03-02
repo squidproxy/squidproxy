@@ -54,7 +54,15 @@ wget --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercont
 
 ```
 
+### Start 启动
 
+```
+squid3 -v                       #查询squid版本
+service squid3 restart          #重启squid服务
+service squid3 status           #查看squid服务运行状态   
+netstat -lntp                   #查询25端口是否启动
+nano /var/log/squid3/access.log #查看squid访问日志文件
+```
 
 ## 其他社区
 
