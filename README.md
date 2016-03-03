@@ -50,7 +50,8 @@ wget --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercont
 
 ```
 
-### Build configuration file For Ubuntu 创建配置文件给Ubuntu系统,默认端口为25
+### Build configuration file (Ubuntu)
+创建配置文件给Ubuntu系统,默认端口为25
 
 ```
 rm -fr /etc/squid3/squid.conf
@@ -115,8 +116,8 @@ squid -z
 
 ```
 
-### Creat firewall rules
-创建缓存文件
+### Create firewall rules
+创建防火墙规则
 ```
 iptables -t nat -F
 iptables -t nat -X
