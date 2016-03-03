@@ -26,7 +26,8 @@ apt-get -y install squid3
 
 ```
 
-### Prepare execution folders 创建缓存文件
+### Prepare execution folders 
+创建缓存文件
 
 ```
 mkdir /var/log/squid
@@ -40,7 +41,8 @@ squid3 -z
 
 ```
 
-### Build configuration file For Debian 创建配置文件给Debian系统,默认端口为25
+### Build configuration file (Debian)
+创建配置文件给Debian系统,默认端口为25
 
 ```
 rm -fr /etc/squid3/squid.conf
@@ -56,7 +58,8 @@ wget --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercont
 
 ```
 
-### Start 启动
+### Start 
+启动
 
 ```
 squid3 -v                       #查询squid版本
@@ -69,19 +72,19 @@ nano /var/log/squid3/access.log #查看squid访问日志文件
  
 ### Deployment PAC Service 
 
-### Install Apache  #部署Apache服务,创建PAC文件
-
+### Install Apache
+部署Apache服务,创建PAC文件
 ```
 sudo aptitude install apache2 apache2-doc
 wget --no-check-certificate -O /var/www/html/Squidproxy.pac https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/Squidproxy.pac
 nano /var/www/html/Squidproxy.pac
 
-replace string VPS-IP with your server ip #将VPS-IP换成你的服务器IP 
-
+replace string VPS-IP with your server ip
+将VPS-IP换成你的服务器IP 
 ```
 
-### Test PAC Address  #测试PAC地址
-
+### Test PAC Address
+测试PAC地址
 ```
  If your server IP is 127.0.0.1,then your PAC address is http://127.0.0.1/Squidproxy.pac
  
@@ -103,8 +106,8 @@ wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubuserconte
 
 ```
 
-### Prepare execution folders 创建缓存文件
-
+### Prepare execution folders 
+创建缓存文件
 ```
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
@@ -112,8 +115,8 @@ squid -z
 
 ```
 
-### Creat firewall rules #创建防火墙规则
-
+### Creat firewall rules
+创建缓存文件
 ```
 iptables -t nat -F
 iptables -t nat -X
@@ -140,8 +143,8 @@ service iptables save
 
 ```
  
-### Start squid service and start automatically during the system startup # 随系统启动
-
+### Start squid service and start automatically during the system startup
+重启服务和随系统启动
 ```
 service squid restart
 chkconfig --level 2345 squid on
