@@ -175,15 +175,6 @@ B同学(相当于B浏览器或B设备)不用在再跑去图书馆(远程网站)�
 用户调用。
 这个从本地获取视频的效率，远比反复从图书馆来的效率更高! 这个就是Squid技术的原理!
 
-## OPEN SOURCE LICENSES
-
-* tun2socks: [BSD](https://github.com/shadowsocks/badvpn/blob/shadowsocks-android/COPYING)
-* redsocks: [APL 2.0](https://github.com/shadowsocks/redsocks/blob/master/README)
-* OpenSSL: [OpenSSL](https://github.com/shadowsocks/openssl-android/blob/master/NOTICE)
-* pdnsd: [GPLv3](https://github.com/shadowsocks/shadowsocks-android/blob/master/src/main/jni/pdnsd/COPYING)
-* libev: [GPLv2](https://github.com/shadowsocks/shadowsocks-android/blob/master/src/main/jni/libev/LICENSE)
-* libevent: [BSD](https://github.com/shadowsocks/libevent/blob/master/LICENSE)
-
 
 ## LICENSE
 
