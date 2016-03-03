@@ -148,7 +148,17 @@ service iptables save
 重启服务和随系统启动
 ```
 service squid restart
-chkconfig --level 2345 squid on
+systemctl enable squid.service
+
+```
+
+###Note
+以上部署测试通过的服务器版本
+```
+CentOS Linux release 7.1.1503 (Core)
+Debian 8 x64 (jessie)
+Debian 7 x64 (jessie)
+Ubuntu 14.02 x64
 
 ```
 
