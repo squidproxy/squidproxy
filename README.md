@@ -140,7 +140,7 @@ service iptables save
 
 ```
  
- ### Start squid service and start automatically during the system startup # 随系统启动
+### Start squid service and start automatically during the system startup # 随系统启动
 
 ```
 service squid restart
