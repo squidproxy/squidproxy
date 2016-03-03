@@ -25,6 +25,7 @@ apt-get update
 apt-get -y install squid3
 
 ```
+
 ### Prepare execution folders 创建缓存文件
 
 ```
@@ -38,6 +39,7 @@ chown -cR proxy /var/spool/squid
 squid3 -z
 
 ```
+
 ### Build configuration file For Debian 创建配置文件给Debian系统,默认端口为25
 
 ```
@@ -98,6 +100,8 @@ centos
 ```
 yum -y install squid && wget
 wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/C-squidconf.conf
+
+```
 
 ### Prepare execution folders 创建缓存文件
 
