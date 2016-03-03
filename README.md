@@ -102,8 +102,8 @@ replace string VPS-IP with your server ip
 centos
 
 ```
-yum -y install squid && wget
-wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/C-squidconf.conf
+yum -y install squid wget
+wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/U-squidconf.conf
 
 ```
 
