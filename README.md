@@ -91,7 +91,59 @@ replace string VPS-IP with your server ip #将VPS-IP换成你的服务器IP
  
 ```
 
+### Install
+
+centos
+
+```
+yum -y install squid && wget
+wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/C-squidconf.conf
+
+### Prepare execution folders 创建缓存文件
+
+```
+mkdir -p /var/cache/squid
+chmod -R 777 /var/cache/squid
+squid -z
+
+```
+
+### Creat firewall rules #创建防火墙规则
+
+```
+iptables -t nat -F
+iptables -t nat -X
+iptables -t nat -P PREROUTING ACCEPT
+iptables -t nat -P POSTROUTING ACCEPT
+iptables -t nat -P OUTPUT ACCEPT
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -t mangle -P PREROUTING ACCEPT
+iptables -t mangle -P INPUT ACCEPT
+iptables -t mangle -P FORWARD ACCEPT
+iptables -t mangle -P OUTPUT ACCEPT
+iptables -t mangle -P POSTROUTING ACCEPT
+iptables -F
+iptables -X
+iptables -P FORWARD ACCEPT
+iptables -P INPUT ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -t raw -F
+iptables -t raw -X
+iptables -t raw -P PREROUTING ACCEPT
+iptables -t raw -P OUTPUT ACCEPT
+service iptables save
+
+```
  
+ ### Start squid service and start automatically during the system startup # 随系统启动
+
+```
+service squid restart
+chkconfig --level 2345 squid on
+
+```
+
 ## 其他社区
 
 * G+ [谷歌社区](https://plus.google.com/communities/101513261063592651175)
