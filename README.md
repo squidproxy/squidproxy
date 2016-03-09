@@ -177,6 +177,25 @@ Ubuntu 14.02 x64
 * G+ [谷歌社区](https://plus.google.com/communities/101513261063592651175)
 * Twitter: [推特](https://twitter.com/squidgfw)
 
+###Acknowledgement 
+特别鸣谢如下项目和作者,SquidProxy使用的技术全部来自如下项目,算是一个集大成者.
+
+```
+Squid项目,他们发明的服务器缓存代理技术,使得我们有机会推广此技术服务大众 
+[squidcache](http://www.squid-cache.org)
+
+TOR项目,他们致力于研究匿名技术,squidProxy的服务端混淆技术就采用洋葱的[obfs4](https://github.com/squidproxy/obfs4).
+[TOR](https://www.torproject.org/)
+
+Flora PAC项目,高效的PAC函数,使得浏览器的智能识别得到提高
+[Flora PAC](https://github.com/usufu/Flora_Pac/)
+
+参照了clowwindy作品的部分思想和技术,其他项目就不一一列出.
+
+这是一个业余程序员的作品,即便我们追求完美,纰漏瑕疵亦无可避免,欢迎到g+社区指正!
+
+```
+
 ## 原理
 
 数据缓存技术
