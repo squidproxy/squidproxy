@@ -176,7 +176,7 @@ Ubuntu 14.02 x64
 
 ```
 
-## 其他社区
+## Other Communities
 
 * G+ [谷歌社区](https://plus.google.com/communities/101513261063592651175)
 * Twitter: [推特](https://twitter.com/squidgfw)
@@ -192,7 +192,7 @@ Ubuntu 14.02 x64
 * 这是一个业余程序员的作品,即便我们追求完美,纰漏瑕疵亦无可避免,欢迎到g+社区指正!
 
 
-## 原理
+## Theory
 
 数据缓存技术
 在一个若干人共同使用的"宿舍"(Squid服务器),A同学(相当于A浏览器或A设备) 从"图书馆"(Youtube等网站)借来的"书籍"(网站等视频资源).
