@@ -84,6 +84,16 @@ replace string VPS-IP with your server ip
 将VPS-IP换成你的服务器IP 
 ```
 
+### Auto development pac server
+自动部署PAC技术
+```
+wget --no-check-certificate  https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/autodevelopmentPAC.sh
+chmod +x autodevelopmentPAC.sh
+./autodevelopmentPAC.sh
+ 
+```
+
+
 ### Test PAC Address
 测试PAC地址
 ```
