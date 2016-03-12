@@ -395,7 +395,7 @@ pip install obfsproxy
 
  clear 
  echo "=============================================="
- echo  "Check port 8087(obfs4) staus "
+ echo  "Check port 8087(obfs4) status "
 
  sleep 3
  
