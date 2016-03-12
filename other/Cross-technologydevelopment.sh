@@ -437,17 +437,13 @@ EOF
 
 clear 
 echo   "============================================================"
-echo   ""
 echo   "squid PAC address http://$Serverip/$PACname"
 echo   "squid port 25"
-echo   ""
 echo   "Shadowsocks port 443,7700,8800,9911"
 echo   "Shadowsocks password Wi2Iaqui"
 echo   "Shadowsocks method rc4"
-echo   ""
 echo   "obfsproxy Bse32 FANGBINXINGFUCKYOURMOTHERSASS444"
 echo   "obfsproxy listen port 8087"
-echo   ""
 echo   "Copyright 2016 squidproxy project"
 echo   "Write by Dave feng 3.12/2016"
-echo   '============================================================'
+exit 0
