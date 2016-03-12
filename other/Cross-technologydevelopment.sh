@@ -448,7 +448,7 @@ echo   ""
 echo   "obfsproxy Bse32 FANGBINXINGFUCKYOURMOTHERSASS444"
 echo   "obfsproxy listen port 8087"
 echo   ""
-echo   "Copyright (C) 2016 squidproxy project"
+echo   "Copyright 2016 squidproxy project"
 echo   "Write by Dave feng 3.12/2016"
 
 echo   "============================================================"
