@@ -222,7 +222,7 @@ if lsof -Pi :25 -sTCP:LISTEN -t >/dev/null ; then
  
 clear 
  echo "=============================================="
- echo  "Check port 1723(vpn) status"
+ echo  "Check port 1723 status"
  echo "=============================================="
  sleep 3
  
@@ -395,7 +395,7 @@ pip install obfsproxy
 
  clear 
  echo "=============================================="
- echo  "Check port 8087(obfs4) status "
+ echo  "Check port 8087 obfs4 status "
 
  sleep 3
  
