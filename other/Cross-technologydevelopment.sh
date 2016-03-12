@@ -15,7 +15,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root
  echo "================================================================================================="
  echo " Squidproxy Project will teach you how to development  a proxy server "
  echo " The Shadowsocks Squid obfs4 and VPN services will have been installed on your linux OS "
- echo " Suuport OS ： Debian Ubuntu"
+ echo " Suuport OS : Debian Ubuntu"
  echo " Version V1.0.0.3 "
  echo " Github https://github.com/squidproxy/squidproxy"
  echo ""
@@ -78,16 +78,16 @@ pip install shadowsocks
 
 if lsof -Pi :443 -sTCP:LISTEN -t >/dev/null ; then
  echo "=============================================="
- echo "The Shadowsocks 443 port aleady running !"
+ echo "Shadowsocks 443 port aleady running !"
 
  sleep 3
  
 else
  nohup ssserver -p 443 -k Wi2Iaqui -m rc4 &
  clear
- echo "========================================================="
- echo "implement ssserver command success,443 port running now"
- echo "======================================================="
+ echo "==========================================================="
+ echo "implement ssserver command success,443 port already running 
+ echo "==========================================================="
  sleep 2
  
 
@@ -104,9 +104,9 @@ else
  nohup ssserver -p 7700 -k Wi2Iaqui -m rc4 &
 
  clear
- echo "=========================================================="
- echo "implement ssserver command success,7700 port running now"
- echo "========================================================"
+ echo "============================================================="
+ echo "implement ssserver command success,7700 port already running "
+ echo "============================================================="
  sleep 2
  
 fi
@@ -122,9 +122,9 @@ else
  nohup ssserver -p 8800 -k Wi2Iaqui -m rc4 &
 
  clear
- echo "========================================================="
- echo "implement ssserver command success,8800 port running now"
- echo "=========================================================="
+ echo "============================================================"
+ echo "implement ssserver command success,8800 port already running "
+ echo "============================================================"
  sleep 3
  
 fi
@@ -141,9 +141,9 @@ else
  nohup ssserver -p 9911 -k Wi2Iaqui -m rc4 &
  
  clear
- echo "=========================================================="
- echo "implement ssserver command success,9911 port running now"
- echo "========================================================"
+ echo "============================================================"
+ echo "implement ssserver command success,9911 port already running "
+ echo "============================================================"
  sleep 2
  
 fi
@@ -168,8 +168,8 @@ fi
 	
 then
 	
+	
 apt-get -y install squid3 aptitude sudo
-read -p "Press any key to continue." var
 mkdir /var/log/squid
 mkdir /var/cache/squid
 mkdir /var/spool/squid
@@ -385,7 +385,7 @@ clear
 
 clear
  echo "=============================================="
- echo "begin development obfsproxy  now"
+ echo "Start developing obfsproxy services ......."
  echo "=============================================="
  sleep 3
  
@@ -440,14 +440,14 @@ echo   "============================================================"
 echo   ""
 echo   "squid PAC address http://$Serverip/$PACname"
 echo   "squid port 25"
-
+echo   ""
 echo   "Shadowsocks port 443,7700,8800,9911"
 echo   "Shadowsocks password Wi2Iaqui"
 echo   "Shadowsocks method rc4"
-
+echo   ""
 echo   "obfsproxy Bse32 FANGBINXINGFUCKYOURMOTHERSASS444"
 echo   "obfsproxy listen port 8087"
-
+echo   ""
 echo   "Copyright (C) 2016 squidproxy project"
 echo   "Write by Dave feng 3.12/2016"
 
