@@ -426,7 +426,7 @@ fi
  
  clear 
  echo "========================================================="
- echo "start automatically during the system startup (Debian)"
+ echo "start automatically during the system startup "
  echo "=========================================================="	
  sleep 3
  
