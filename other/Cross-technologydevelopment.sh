@@ -14,8 +14,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root
  echo ""
  echo "================================================================================================="
  echo " Squidproxy Project will teach you how to development  a proxy server "
- echo " The Shadowsocks 、Squid、obfs4 and VPN services will have been installed on your linux OS "
- echo " Suuport OS ： Debian 、Ubuntu"
+ echo " The Shadowsocks Squid obfs4 and VPN services will have been installed on your linux OS "
+ echo " Suuport OS ： Debian Ubuntu"
  echo " Version V1.0.0.3 "
  echo " Github https://github.com/squidproxy/squidproxy"
  echo ""
@@ -438,11 +438,16 @@ EOF
 clear 
 echo   "============================================================"
 echo   ""
-echo   "Your PAC is http://$Serverip/$PACname"
-echo   "Your obfsproxy Bse32 FANGBINXINGFUCKYOURMOTHERSASS444"
-echo   "Your obfsproxy port 8087"
-echo   "Your squid port 25"
-echo   "Your Shadowsocks port 443,7700,8800,9911"
+echo   "squid PAC address http://$Serverip/$PACname"
+echo   "squid port 25"
+
+echo   "Shadowsocks port 443,7700,8800,9911"
+echo   "Shadowsocks password Wi2Iaqui"
+echo   "Shadowsocks method rc4"
+
+echo   "obfsproxy Bse32 FANGBINXINGFUCKYOURMOTHERSASS444"
+echo   "obfsproxy listen port 8087"
+
 echo   "Copyright (C) 2016 squidproxy project"
 echo   "Write by Dave feng 3.12/2016"
 
