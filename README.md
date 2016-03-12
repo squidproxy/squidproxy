@@ -1,11 +1,12 @@
 ### 多技术服务端部署(一键脚本)
-Support Tech
+Tech Support
 * VPN
 * Shadowsocks
 * obfsproxy
 * Squid
 * PAC
 * 反馈[问题](https://plus.google.com/communities/101513261063592651175)
+
 Debian/Ubuntu
 
 ```
