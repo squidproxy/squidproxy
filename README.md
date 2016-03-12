@@ -1,8 +1,26 @@
-## 最新版SquidProxy V2.0.0.13##
+### 多技术服务端部署(一键脚本)
+Support Tech
+* VPN
+* Shadowsocks
+* obfsproxy
+* Squid
+* PAC
+* 反馈[问题](https://plus.google.com/communities/101513261063592651175)
+Debian/Ubuntu
+
+```
+wget https://raw.githubusercontent.com/squidproxy/squidproxy/master/other/Cross-technologydevelopment.sh
+
+chmod +x Cross-technologydevelopment.sh
+
+./Cross-technologydevelopment.sh
+
+```
+
+## SquidProxy V2.0.0.13##
 
 
 * SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.13/Squidproxy.exe)
-* 获取公共服务器 [进入](https://plus.google.com/communities/101513261063592651175)
 * 修正了退出后代理无法恢复的bug
 * 更新obfs4混淆部署 [Obfsproxy](https://github.com/squidproxy/obfs4)
 * 对Squid流量做混淆加密处理,降低干扰和识别率,提高Squid服务器的稳定性
