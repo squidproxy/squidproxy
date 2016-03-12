@@ -452,4 +452,3 @@ echo   "Copyright 2016 squidproxy project"
 echo   "Write by Dave feng 3.12/2016"
 
 echo   "============================================================"
-read -p "Press any key to continue." var
