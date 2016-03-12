@@ -10,7 +10,7 @@ Tech Support
 Debian/Ubuntu
 
 ```
-wget https://raw.githubusercontent.com/squidproxy/squidproxy/master/other/Cross-technologydevelopment.sh
+wget -N https://raw.githubusercontent.com/squidproxy/squidproxy/master/other/Cross-technologydevelopment.sh
 
 chmod +x Cross-technologydevelopment.sh
 
