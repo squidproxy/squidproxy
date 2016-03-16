@@ -3,7 +3,7 @@
 ## SquidProxy V2.0.0.14##
 
 
-* SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.13/Squidproxy.exe)
+* SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe)
 * 提供squid技术培训
 * 上百部珍贵squid技术培训视频独家提供
 * 从客户端的设计到服务端的讲解,squidproxy项目提供上千部原创性的squid视频和资源,上千个知识点的汇集,让你成为squid方面的专家

@@ -131,7 +131,7 @@ namespace squidproxy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://127.0.0.1/squidproxy.exe.
+        ///   Looks up a localized string similar to http://45.32.25.28/BadouPac.exe.
         /// </summary>
         public static string myStringWebResource {
             get {
@@ -140,7 +140,18 @@ namespace squidproxy.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://127.0.0.1/app_version.xml.
+        ///   Looks up a localized string similar to      Squid Cache（简称为Squid）是HTTP代理服务器软件。Squid用途广泛的，可以作为缓存服务器，可以过滤流量帮助网络安全，也可以作为代理服务器链中的一环，向上级代理转发数据或直接连接互联网。Squid程序在Unix一类系统运行。由于它是开源软件，有网站修改Squid的源代码，编译为原生Windows版[3]；用户也可在Windows里安装Cygwin，然后在Cygwin里编译Squid。
+        ///
+        ///   Squid的发展历史相当悠久，功能也相当完善。除了HTTP外，对于FTP与HTTPS的支持也相当好，在3.0测试版中也支持了IPv6。但是Squid的上级代理不能使用SOCKS协议。                                                                                                                                                                                                                [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string test {
+            get {
+                return ResourceManager.GetString("test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://45.32.25.28/app_version.xml.
         /// </summary>
         public static string xmlURL {
             get {

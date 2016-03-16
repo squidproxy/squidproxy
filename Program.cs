@@ -17,7 +17,7 @@ namespace pac
 
             if (!result)
             {
-                MessageBox.Show("BadouSquidClient客户端已经运行!", "提示");
+                MessageBox.Show("请勿重复运行客户端!", "提示");
                 return;
             }
 

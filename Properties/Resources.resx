@@ -118,14 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="xmlURL" xml:space="preserve">
-    <value>http://127.0.0.1/app_version.xml</value>
+    <value>http://45.32.25.28/app_version.xml</value>
+  </data>
+  <data name="test" xml:space="preserve">
+    <value>     Squid Cache（简称为Squid）是HTTP代理服务器软件。Squid用途广泛的，可以作为缓存服务器，可以过滤流量帮助网络安全，也可以作为代理服务器链中的一环，向上级代理转发数据或直接连接互联网。Squid程序在Unix一类系统运行。由于它是开源软件，有网站修改Squid的源代码，编译为原生Windows版[3]；用户也可在Windows里安装Cygwin，然后在Cygwin里编译Squid。
+
+   Squid的发展历史相当悠久，功能也相当完善。除了HTTP外，对于FTP与HTTPS的支持也相当好，在3.0测试版中也支持了IPv6。但是Squid的上级代理不能使用SOCKS协议。                                                                                                                                                                                                                                                                                    Github: https://github.com/squidproxy/squidproxy                                                                                                                                                                                                                                                      G+:  https://plus.google.com/communities/101513261063592651175                                                          </value>
+    <comment>测试字符串资源</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_interface" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\interface.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="myStringWebResource" xml:space="preserve">
-    <value>http://127.0.0.1/squidproxy.exe</value>
+    <value>http://45.32.25.28/BadouPac.exe</value>
   </data>
   <data name="-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\interface.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

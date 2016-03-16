@@ -36,8 +36,10 @@ namespace pac
         string globalURL;
         public string inipath;
         string PacURL;
+        string newsquidproxy;
 
-
+        ToolStripMenuItem ProxyMode1;
+        ToolStripMenuItem ProxyMode2;
 
         public static void NotifyIE()
         {
@@ -307,11 +309,11 @@ namespace pac
                 RegistryKey registry =
                     Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings",
                         true);
-              
-                    registry.SetValue("ProxyEnable", 0);
-                    registry.SetValue("ProxyServer", "");
-                    registry.SetValue("AutoConfigURL", "");
-              
+
+                registry.SetValue("ProxyEnable", 0);
+                registry.SetValue("ProxyServer", "");
+                registry.SetValue("AutoConfigURL", "");
+
                 //Set AutoDetectProxy Off
                 IEAutoDetectProxy(false);
                 NotifyIE();
@@ -320,7 +322,7 @@ namespace pac
             }
             catch (Exception e)
             {
-      
+
                 // TODO this should be moved into views
                 MessageBox.Show("Failed to update registry");
             }
@@ -458,7 +460,7 @@ namespace pac
         }
 
 
-      
+
         private static void CopyProxySettingFromLan()
         {
             RegistryKey registry =
@@ -536,6 +538,8 @@ namespace pac
         {
 
             //    MessageBox.Show(((sender as ToolStripMenuItem).Text));
+
+
             //   SetSquidProxy1((sender as ToolStripMenuItem).Text);
             string path = System.Environment.CurrentDirectory;
             string GlobalStatus = ReadINI("ProxyMode", "Global", @path + "\\" + "SquidConfig.ini");
@@ -544,14 +548,78 @@ namespace pac
             if (GlobalStatus == "1")
 
             {
-                PacURL = ((sender as ToolStripMenuItem).Text);
 
-                RegularURL(PacURL);
 
-                AdslSetSquidProxy(globalURL);
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 全局代理" + Environment.NewLine + "服务器:" + globalURL;
-                char[] myChar = NotifyShowContent.ToCharArray();
-                SetNotifyIconText(notifyIcon1, new string(myChar));
+                try
+
+                {
+                    string Downloadfilename = "GFWlist.pac";
+                    string DefaultServer = ReadINI("DefaultStartup", "Server", @path + "\\" + "SquidConfig.ini");
+
+                    string PacURL = DefaultServer;
+
+                    //     RegularURL(PacURL);
+
+                    string url = PacURL;
+
+
+
+                    WebClient client = new WebClient();
+                    ServicePointManager.DefaultConnectionLimit = 512;
+
+                    //  client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
+                    client.DownloadFileCompleted += new AsyncCompletedEventHandler(downloader_DownloadFileCompleted);
+
+                    // Starts the download
+
+                    client.DownloadFileAsync(new Uri(url), @path + "/" + Downloadfilename);
+
+
+                }
+
+
+                catch (Exception SquidError)
+                {
+                    MessageBox.Show(SquidError.Message.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+                //  RegularURL(PacURL);
+
+                //   AdslSetSquidProxy(globalURL);
+
+                //   string path = System.Environment.CurrentDirectory;
+                //  string Downloadfilename = "GFWlist.pac";
+
+                //System.IO.StreamReader sr = new StreamReader("c:\\1.pac", Encoding.Default);
+
+                //string tempstr = null;
+                //int count = 0;
+                //while ((tempstr = sr.ReadLine()) != null)
+                //{
+                //    count++;
+                //    if (count == 3)
+                //    {
+                //        string[] StrArray = tempstr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                //        string newsquidproxy = StrArray[4];
+
+                //        string str = newsquidproxy;
+                //        int i = 6;
+
+                //        string StrServerIP = str.Substring(0, str.Length - i); // or str=str.Remove(str.Length-i,i);
+                //                                                               // MessageBox.Show(StrServerIP);
+                //        AdslSetSquidProxy(StrServerIP);
+
+                //        string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + StrServerIP;
+                //        char[] myChar = NotifyShowContent.ToCharArray();
+
+                //        SetNotifyIconText(notifyIcon1, new string(myChar));
+
+                //    }
+
+                //}
+
+                //sr.Close(); // release Resources
 
             }
             else if (SmartStatus == "1")
@@ -560,7 +628,9 @@ namespace pac
                 //    MessageBox.Show(((sender as ToolStripMenuItem).Text));
                 SetSquidProxy1((sender as ToolStripMenuItem).Text);
 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能代理" + Environment.NewLine + "服务器:" + ((sender as ToolStripMenuItem).Text);
+
+
+                string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能代理" + Environment.NewLine + "服务器:" + ((sender as ToolStripMenuItem).Text);
                 char[] myChar = NotifyShowContent.ToCharArray();
 
                 SetNotifyIconText(notifyIcon1, new string(myChar));
@@ -575,32 +645,110 @@ namespace pac
 
         }
 
+        void downloader_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message);
+            }
+
+            else
+
+
+            {
+
+                //  MessageBox.Show("Completed!!!");
+                string path = System.Environment.CurrentDirectory;
+                string Downloadfilename = "GFWlist.pac";
+
+                System.IO.StreamReader sr = new StreamReader(@path + "\\" + Downloadfilename, Encoding.Default);
+
+                string tempstr = null;
+                int count = 0;
+                while ((tempstr = sr.ReadLine()) != null)
+                {
+                    count++;
+                    if (count == 3)
+                    {
+                        string[] StrArray = tempstr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        string newsquidproxy = StrArray[4];
+
+                        string str = newsquidproxy;
+                        int i = 6;
+
+                        string StrServerIP = str.Substring(0, str.Length - i); // or str=str.Remove(str.Length-i,i);
+                                                                               // MessageBox.Show(StrServerIP);
+                        AdslSetSquidProxy(StrServerIP);
+
+                        string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + StrServerIP;
+                        char[] myChar = NotifyShowContent.ToCharArray();
+
+                        SetNotifyIconText(notifyIcon1, new string(myChar));
+
+                       
+
+                    }
+
+                }
+
+                sr.Close(); // release Resources
+           
+            }
+
+
+        }
+
         void GlobalWriteInIClicked(object sender, EventArgs e)
 
         {
+
+
             IniWriteValue("ProxyMode", "Global", "1");
             IniWriteValue("ProxyMode", "Smart", "0");
 
             //   SetSquidProxy1((sender as ToolStripMenuItem).Text);
             string path = System.Environment.CurrentDirectory;
+
             string GlobalStatus = ReadINI("ProxyMode", "Global", @path + "\\" + "SquidConfig.ini");
             string SmartStatus = ReadINI("ProxyMode", "Smart", @path + "\\" + "SquidConfig.ini");
 
             if (GlobalStatus == "1")
 
             {
-                string DefaultServer = ReadINI("DefaultStartup", "Server", @path + "\\" + "SquidConfig.ini");
 
-                string PacURL = DefaultServer;
 
-                RegularURL(PacURL);
+                try
 
-                AdslSetSquidProxy(globalURL);
+                {
+                    string Downloadfilename = "GFWlist.pac";
+                    string DefaultServer = ReadINI("DefaultStartup", "Server", @path + "\\" + "SquidConfig.ini");
 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
-                char[] myChar = NotifyShowContent.ToCharArray();
+                    string PacURL = DefaultServer;
 
-                SetNotifyIconText(notifyIcon1, new string(myChar));
+                    //     RegularURL(PacURL);
+
+                    string url = PacURL;
+
+                    // MessageBox.Show(url);
+
+                    WebClient client = new WebClient();
+                    ServicePointManager.DefaultConnectionLimit = 512;
+                    client.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
+                    //  client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
+                    client.DownloadFileCompleted += new AsyncCompletedEventHandler(downloader_DownloadFileCompleted);
+
+                    // Starts the download
+
+                    client.DownloadFileAsync(new Uri(url), @path + "\\" + Downloadfilename);
+
+                    client.Dispose();
+                }
+
+
+                catch (Exception SquidError)
+                {
+                    MessageBox.Show(SquidError.Message.ToString(), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
 
             }
@@ -611,13 +759,14 @@ namespace pac
 
                 SetSquidProxy1(DefaultServer);
 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
+                string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
                 char[] myChar = NotifyShowContent.ToCharArray();
 
                 SetNotifyIconText(notifyIcon1, new string(myChar));
 
             }
 
+            LoadServerMenu();// LoadServerMenu
 
         }
 
@@ -645,7 +794,7 @@ namespace pac
                 AdslSetSquidProxy(globalURL);
 
                 // 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
+                string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
                 char[] myChar = NotifyShowContent.ToCharArray();
 
                 SetNotifyIconText(notifyIcon1, new string(myChar));
@@ -663,16 +812,14 @@ namespace pac
 
 
 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
+                string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
                 char[] myChar = NotifyShowContent.ToCharArray();
 
                 SetNotifyIconText(notifyIcon1, new string(myChar));
 
-
-
             }
 
-
+            LoadServerMenu();// LoadServerMenu
         }
 
 
@@ -716,23 +863,26 @@ namespace pac
             {
 
 
-           }
+            }
 
             else
 
             {
-           
+
                 ToolStripMenuItem ProxyMode;
+
                 ToolStripMenuItem subItem;
 
                 ProxyMode = AddContextMenu("代理模式", contextMenuStrip1.Items, null);
-                AddContextMenu("全局代理", ProxyMode.DropDownItems, new EventHandler(GlobalWriteInIClicked));
-                AddContextMenu("智能代理", ProxyMode.DropDownItems, new EventHandler(SmartWriteINIClicked));
+                ProxyMode1 = AddContextMenu("全局代理", ProxyMode.DropDownItems, new EventHandler(GlobalWriteInIClicked));
+                ProxyMode2 = AddContextMenu("智能代理", ProxyMode.DropDownItems, new EventHandler(SmartWriteINIClicked));
+
+
 
 
 
                 //添加菜单一 
-            
+
                 subItem = AddContextMenu("服务器", contextMenuStrip1.Items, null);
 
                 ToolStripMenuItem subItem1;
@@ -767,6 +917,8 @@ namespace pac
 
 
 
+
+
                 }
 
                 AddContextMenu("编辑服务器", subItem.DropDownItems, new EventHandler(EditServer));
@@ -797,16 +949,18 @@ namespace pac
 
                 AdslSetSquidProxy(globalURL);
 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
+                string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
                 char[] myChar = NotifyShowContent.ToCharArray();
 
                 SetNotifyIconText(notifyIcon1, new string(myChar));
 
+                ((ToolStripMenuItem)ProxyMode1).Checked = true;
 
             }
             else if (SmartStatus == "1")
 
             {
+                ((ToolStripMenuItem)ProxyMode2).Checked = true;
 
                 string DefaultServer = ReadINI("DefaultStartup", "Server", @path + "\\" + "SquidConfig.ini");
 
@@ -840,7 +994,7 @@ namespace pac
                 if (exists)
                 {
 
-                    string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
+                    string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
                     char[] myChar = NotifyShowContent.ToCharArray();
 
                     SetNotifyIconText(notifyIcon1, new string(myChar));
@@ -856,12 +1010,12 @@ namespace pac
                 {
                     //  MessageBox.Show("no exists");
 
-                    notifyIcon1.Text = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器: 未加入";
+                    notifyIcon1.Text = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器: 未加入";
                 }
 
             }
 
-
+           
 
 
         }
@@ -925,8 +1079,9 @@ namespace pac
             {
                 ToolStripMenuItem ProxyMode;
                 ProxyMode = AddContextMenu("代理模式", contextMenuStrip1.Items, null);
-                AddContextMenu("全局代理", ProxyMode.DropDownItems, new EventHandler(GlobalWriteInIClicked));
-                AddContextMenu("智能代理", ProxyMode.DropDownItems, new EventHandler(SmartWriteINIClicked));
+                ProxyMode1 = AddContextMenu("全局代理", ProxyMode.DropDownItems, new EventHandler(GlobalWriteInIClicked));
+                ProxyMode2 = AddContextMenu("智能代理", ProxyMode.DropDownItems, new EventHandler(SmartWriteINIClicked));
+
 
 
                 //添加菜单一 
@@ -969,8 +1124,8 @@ namespace pac
             {
                 ToolStripMenuItem ProxyMode;
                 ProxyMode = AddContextMenu("代理模式", contextMenuStrip1.Items, null);
-                AddContextMenu("全局代理", ProxyMode.DropDownItems, new EventHandler(GlobalWriteInIClicked));
-                AddContextMenu("智能代理", ProxyMode.DropDownItems, new EventHandler(SmartWriteINIClicked));
+                ProxyMode1 = AddContextMenu("全局代理", ProxyMode.DropDownItems, new EventHandler(GlobalWriteInIClicked));
+                ProxyMode2 = AddContextMenu("智能代理", ProxyMode.DropDownItems, new EventHandler(SmartWriteINIClicked));
 
 
                 //添加菜单一 
@@ -1009,8 +1164,8 @@ namespace pac
 
             }
 
-        
-           
+
+
 
             //   contextMenuStrip1.Items.Clear();
             //  contextMenuStrip1.Items.Clear();
@@ -1023,6 +1178,7 @@ namespace pac
             if (GlobalStatus == "1")
 
             {
+                ((ToolStripMenuItem)ProxyMode1).Checked = true;
                 string DefaultServer = ReadINI("DefaultStartup", "Server", @path + "\\" + "SquidConfig.ini");
 
                 string PacURL = DefaultServer;
@@ -1032,7 +1188,7 @@ namespace pac
                 AdslSetSquidProxy(globalURL);
 
 
-                string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
+                string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 全局" + Environment.NewLine + "服务器:" + globalURL;
                 char[] myChar = NotifyShowContent.ToCharArray();
 
                 SetNotifyIconText(notifyIcon1, new string(myChar));
@@ -1042,7 +1198,7 @@ namespace pac
             else if (SmartStatus == "1")
 
             {
-
+                ((ToolStripMenuItem)ProxyMode2).Checked = true;
                 string DefaultServer = ReadINI("DefaultStartup", "Server", @path + "\\" + "SquidConfig.ini");
 
 
@@ -1079,7 +1235,7 @@ namespace pac
                 bool exists = ((IList)arrayList).Contains("User");
                 if (exists)
                 {
-                    string NotifyShowContent = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
+                    string NotifyShowContent = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器:" + DefaultServer;
                     char[] myChar = NotifyShowContent.ToCharArray();
 
 
@@ -1094,16 +1250,22 @@ namespace pac
                 // 不存在
                 {
                     //  MessageBox.Show("no exists");
-                 //   IniWriteValue("DefaultStartup", "FirstRun", "1");
+                    //   IniWriteValue("DefaultStartup", "FirstRun", "1");
 
-                    notifyIcon1.Text = "Squid V2.0.0.12" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器: 未加入";
+                    notifyIcon1.Text = "Squid V2.0.0.14" + Environment.NewLine + "代理模式: 智能" + Environment.NewLine + "服务器: 未加入";
                 }
 
 
 
             }
 
+            ToolStripMenuItem subItem1;
+            subItem1 = AddContextMenu("-", contextMenuStrip1.Items, null);
 
+            subItem1 = AddContextMenu("退出", contextMenuStrip1.Items, null);
+
+
+            subItem1.Click += tested;
 
         }
 
@@ -1250,7 +1412,9 @@ namespace pac
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            CheckUpdate();
+
+
+            // CheckUpdate();
 
 
 
@@ -1258,7 +1422,7 @@ namespace pac
             //subItem2 = AddContextMenu("重新加载配置", contextMenuStrip1.Items, new EventHandler(LoadSetting));
 
 
-            ToolStripMenuItem subItem1;
+
 
 
             ReadSections();
@@ -1266,11 +1430,7 @@ namespace pac
             LoadServerMenu();// LoadServerMenu
 
 
-            subItem1 = AddContextMenu("-", contextMenuStrip1.Items, null);
 
-            subItem1 = AddContextMenu("退出", contextMenuStrip1.Items, null);
-
-            subItem1.Click += tested;
 
 
             // setting up proxy
@@ -1323,7 +1483,7 @@ namespace pac
 
         }
 
-    
+
 
         private void RebootSystem_Click(object sender, EventArgs e)
         {
@@ -1342,7 +1502,7 @@ namespace pac
         private void AboutMe_Click(object sender, EventArgs e)
         {
             this.Visible = true;
-         //   this.WindowState = FormWindowState.Normal;
+            //   this.WindowState = FormWindowState.Normal;
 
             this.notifyIcon1.Visible = true;
 
@@ -1372,11 +1532,11 @@ namespace pac
 
 
 
-  
+
 
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
-            pictureBox1.Visible =  false;
+            pictureBox1.Visible = false;
             pictureBox2.Visible = true;
 
         }
