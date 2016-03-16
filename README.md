@@ -1,30 +1,13 @@
-### 多技术服务端部署(一键脚本)
-Tech Support
-* VPN
-* Shadowsocks
-* obfsproxy
-* Squid
-* PAC
-* 反馈[问题](https://plus.google.com/communities/101513261063592651175)
 
-Debian/Ubuntu
 
-```
-wget -N https://raw.githubusercontent.com/squidproxy/squidproxy/master/other/Cross-technologydevelopment.sh
-
-chmod +x Cross-technologydevelopment.sh
-
-./Cross-technologydevelopment.sh
-
-```
-
-## SquidProxy V2.0.0.13##
+## SquidProxy V2.0.0.14##
 
 
 * SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.13/Squidproxy.exe)
-* 修正了退出后代理无法恢复的bug
-* 更新obfs4混淆部署 [Obfsproxy](https://github.com/squidproxy/obfs4)
-* 对Squid流量做混淆加密处理,降低干扰和识别率,提高Squid服务器的稳定性
+* 提供squid技术培训
+* 上百部珍贵squid技术培训视频独家提供
+* 从客户端的设计到服务端的讲解,squidproxy项目提供上千部原创性的squid视频和资源,上千个知识点的汇集,让你成为squid方面的专家
+* Skyp(培训联系):squidproxy1989
 
 ##特性##
 
@@ -33,7 +16,7 @@ chmod +x Cross-technologydevelopment.sh
 - 自动版本更新功能,轻松获取最新技术
 - 支持智能和全局,无缝切换
 - 基于Framework3.5框架开发
-- PAC模式部署,安装apache2服务到服务器,确保Squid服务和Apache2为同一服务器!
+- V2.0.0.14已经支持不同的PAC服务器(apache2)指向同一个squid服务器!
 
 ## Server
 
