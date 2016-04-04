@@ -8,7 +8,7 @@ Squidproxy项目软件和服务端部署
 {|
 ! 软件 !! 版本 !! 技术 !! 下载
 |-
-| '''Squidproxy''' || V2.0.0.15 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe github镜像1]
+| '''Squidproxy''' || V2.0.0.15 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.16/squidproxy.exe github镜像1]
 |-
 | &nbsp; || &nbsp;|| &nbsp; || [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe GoogleDrive镜像2]
 |-
