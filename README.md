@@ -1,13 +1,34 @@
+=  =
+
+Squidproxy项目软件和服务端部署
 
 
-## SquidProxy V2.0.0.14##
+== 软件 ==
 
+{|
+! 软件 !! 版本 !! 技术 !! 下载
+|-
+| '''Squidproxy''' || V2.0.0.15 || Squid|| Github镜像1 [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe]
+|-
+| &nbsp; || &nbsp;|| &nbsp; || GoogleDrive 镜像2 [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe]
+|-
+| '''灯笼''' || V2.1.1 || P2P去中心化 || 镜像1 [https://s3.amazonaws.com/lantern/lantern-installer-beta.exe] 
+|-
+| '''Onesafe''' || V1.2.0 || Squid+obfs4 || 镜像1 [https://github.com/squidproxy/obfs4/releases/download/v1.0.0.1/obfsproxydl.exe] 
+|-
+|}
 
-* SquidProxy [下载](https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe)
-* 提供squid技术培训
-* 上百部珍贵squid技术培训视频独家提供
-* 从客户端的设计到服务端的讲解,squidproxy项目提供上千部原创性的squid视频和资源,上千个知识点的汇集,让你成为squid方面的专家
-* Skyp(培训联系):squidproxy1989
+{|
+! 其他社区 !! &nbsp; !! &nbsp; !! &nbsp;
+|-
+| '''推特''' || [https://twitter.com/squidgfw]|| &nbsp; || &nbsp;
+|-
+| '''博客''' || [http://obfs4.blogspot.com] || &nbsp; || &nbsp;
+|-
+| '''G+''' || [https://plus.google.com/communities/101513261063592651175] || &nbsp;|| &nbsp;
+|-
+|}
+
 
 ##特性##
 
@@ -16,7 +37,6 @@
 - 自动版本更新功能,轻松获取最新技术
 - 支持智能和全局,无缝切换
 - 基于Framework3.5框架开发
-- V2.0.0.14已经支持不同的PAC服务器(apache2)指向同一个squid服务器!
 
 ## Server
 
@@ -88,28 +108,10 @@ replace string VPS-IP with your server ip
 将VPS-IP换成你的服务器IP 
 ```
 
-### Auto development pac server
-自动部署PAC技术
-```
-wget --no-check-certificate  https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/autodevelopmentPAC.sh
-chmod +x autodevelopmentPAC.sh
-./autodevelopmentPAC.sh
  
 ```
 
 
-### Test PAC Address
-测试PAC地址
-```
- If your server IP is 127.0.0.1,then your PAC address is http://127.0.0.1/Squidproxy.pac
- 
- Smart mode (PAC) address is http://127.0.0.1/Squidproxy.pac
-
- global mode :The proxt Server address is 127.0.0.1 ,port 25
- 
- Now,setting up PAC address for your Internet option 
- 
-```
 
 ### Install
 
