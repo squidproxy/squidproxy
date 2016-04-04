@@ -35,12 +35,16 @@ Squidproxy项目软件和服务端部署
 == squidproxy ==
 
 轻松管理squid缓存服务器的客户端
+
 多服务器管理,支持添加、删除、编辑Squid服务器
+
 支持智能和全局,无缝切换
+
 基于Framework3.5框架
 
 == onesafe ==
 方便使用obfs4技术
+
 obfsproxy套件+squid技术支持
 
 == LICENSE ==
