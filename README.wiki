@@ -8,7 +8,7 @@ Squidproxy项目软件和服务端部署
 {|
 ! 软件 !! 版本 !! 技术 !! 下载
 |-
-| '''Squidproxy''' || V2.0.0.15 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.16/squidproxy.exe github镜像1]
+| '''Squidproxy''' || V2.0.0.16 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.16/squidproxy.exe github镜像1]
 |-
 | &nbsp; || &nbsp;|| &nbsp; || [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.14/squidproxy.exe GoogleDrive镜像2]
 |-
@@ -32,13 +32,17 @@ Squidproxy项目软件和服务端部署
 |}
 
 
-== squidproxy ==
+== Squidproxy V2.0.0.16==
 
-轻松管理squid缓存服务器的客户端
+解决中文目录读取配置文件出错的bug
+
+一个高效轻松管理squid缓存服务器的客户端
 
 多服务器管理,支持添加、删除、编辑Squid服务器
 
-支持智能和全局,无缝切换
+智能模式:通过高效PAC来减小国内域名的响应时间
+
+全局模式可以无需添加域名就完成对外网的加速和代理功能
 
 基于Framework3.5框架
 
