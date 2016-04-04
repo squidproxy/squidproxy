@@ -40,7 +40,7 @@ Squidproxy项目软件和服务端部署
 
 多服务器管理,支持添加、删除、编辑Squid服务器
 
-智能模式:通过高效PAC来减小国内域名的响应时间
+智能模式:通过高效的PAC文件来减小国内域名的响应时间
 
 全局模式可以无需添加域名就完成对外网的加速和代理功能
 
@@ -66,4 +66,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
+along with this program. If not, see 
+[http://www.gnu.org/licenses]
