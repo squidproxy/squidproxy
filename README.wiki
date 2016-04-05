@@ -14,6 +14,8 @@ Squidproxy项目软件和服务端部署
 |-
 | '''灯笼''' || V2.1.1 || P2P去中心化 ||  [https://s3.amazonaws.com/lantern/lantern-installer-beta.exe 下载镜像1] 
 |-
+| &nbsp; || &nbsp; || &nbsp; ||  [https://drive.google.com/file/d/0B7RiljSae6SrZ2RmbG4xQ2dTOHc/view?usp=sharing GoogleDrive镜像2] 
+|-
 | '''Onesafe''' || V1.2.0 || Squid+obfs4 ||  [https://github.com/squidproxy/obfs4/releases/download/v1.0.0.1/obfsproxydl.exe 下载镜像1] 
 |-
 |}
@@ -32,7 +34,6 @@ Squidproxy项目软件和服务端部署
 |}
 
 == Squidproxy==
->>>>>>> 1e678ca53ad0f88662e7307de24f3dbe5e3bf44c
 
 解决中文目录读取配置文件出错的bug
 
