@@ -31,8 +31,8 @@ Squidproxy项目软件和服务端部署
 |-
 |}
 
-
-== Squidproxy ==
+== Squidproxy==
+>>>>>>> 1e678ca53ad0f88662e7307de24f3dbe5e3bf44c
 
 解决中文目录读取配置文件出错的bug
 
