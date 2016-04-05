@@ -32,7 +32,7 @@ Squidproxy项目软件和服务端部署
 |}
 
 
-== Squidproxy V2.0.0.16==
+== Squidproxy==
 
 解决中文目录读取配置文件出错的bug
 
