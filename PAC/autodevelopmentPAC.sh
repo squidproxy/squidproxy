@@ -24,7 +24,7 @@ if [ ! -d "/var/www/html" ]
  then 
     echo "Next step"  
   else	  
-wget wget --no-check-certificate -O /var/www/html/$PACname https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/Squidproxy.pac   
+wget --no-check-certificate -O /var/www/html/$PACname https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/Squidproxy.pac   
 fi
 
 if [ ! -d "/var/www" ]
@@ -34,7 +34,7 @@ if [ ! -d "/var/www" ]
    echo "Next step"
   
   else
-	  wget wget --no-check-certificate -O /var/www/$PACname https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/Squidproxy.pac
+	  wget --no-check-certificate -O /var/www/$PACname https://raw.githubusercontent.com/squidproxy/squidproxy/master/PAC/Squidproxy.pac
   
 fi
 
