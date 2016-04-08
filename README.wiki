@@ -20,6 +20,22 @@ Squidproxy项目软件和服务端部署
 |-
 |}
 
+
+{|
+! 服务端 !! 支持系统 !! 部署技术!! 下载
+|-
+| &nbsp;|| centos || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.17/squidproxy.exe github镜像1]
+|-
+| &nbsp; || debian|| squid || [https://drive.google.com/file/d/0B7RiljSae6SrYXozUWs5V05tYnM/view?usp=sharing GoogleDrive镜像2]
+|-
+| &nbsp; || ubuntu || squid ||  [https://s3.amazonaws.com/lantern/lantern-installer-beta.exe 下载镜像1] 
+|-
+
+|}
+
+== 安装squid服务==
+wget 
+
 =  =
 == 反馈交流 ==
 {|
