@@ -6,12 +6,6 @@
 # development a squid sevices on linux
 # support ubuntu debian centos
 
-
-# Check if user is root
-[ $(id -u) != "0" ] && { echo -e "\033[31mError: You must be root to run this script\033[0m"; exit 1; } 
-
-# Begin 
-# development VPN sevice on debian OS 
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root
  echo ""
  echo "================================================================================================="
@@ -24,7 +18,12 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root
  package_download_url=https://raw.githubusercontent.com/squidproxy/squidproxy/master/control_squid.zip
  package_save_name=cross_squid.zip
 
+function checkroot()
 
+{
+# Check if user is root
+[ $(id -u) != "0" ] && { echo -e "\033[31mError: You must be root to run this script\033[0m"; exit 1; } 
+}
  
  function checkos(){
     if [[ -f /etc/redhat-release ]];then
@@ -106,14 +105,13 @@ function settingconfig()
 
 	if [[ $OS = "debian" ]]; then
 
-		echo "setting configurate on debian os.."
-		
-	   mkdir /var/log/squid
-      mkdir /var/cache/squid
-      mkdir /var/spool/squid
-      chown -cR proxy /var/log/squid
-      chown -cR proxy /var/cache/squid
-      chown -cR proxy /var/spool/squid		
+		echo "setting configurate on debian os.."		
+	    mkdir /var/log/squid
+        mkdir /var/cache/squid
+        mkdir /var/spool/squid
+        chown -cR proxy /var/log/squid
+        chown -cR proxy /var/cache/squid
+        chown -cR proxy /var/spool/squid		
 		wget --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/D-squidconf.conf
 		
 		fi
@@ -123,12 +121,12 @@ function settingconfig()
 
 		echo "setting configurate on ubuntu os.."
 		
-	   mkdir /var/log/squid
-      mkdir /var/cache/squid
-      mkdir /var/spool/squid
-      chown -cR proxy /var/log/squid
-      chown -cR proxy /var/cache/squid
-      chown -cR proxy /var/spool/squid		
+	    mkdir /var/log/squid
+        mkdir /var/cache/squid
+        mkdir /var/spool/squid
+        chown -cR proxy /var/log/squid
+        chown -cR proxy /var/cache/squid
+        chown -cR proxy /var/spool/squid		
 		wget --no-check-certificate -O /etc/squid3/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/U-squidconf.conf
 		
 		fi
@@ -136,31 +134,31 @@ function settingconfig()
 		if [[ $OS = "centos" ]]; then
 		
 		mkdir -p /var/cache/squid
-      chmod -R 777 /var/cache/squid
-      squid -z
- 
-      iptables -t nat -F
-      iptables -t nat -X
-      iptables -t nat -P PREROUTING ACCEPT
-      iptables -t nat -P POSTROUTING ACCEPT
-      iptables -t nat -P OUTPUT ACCEPT
-      iptables -t mangle -F
-      iptables -t mangle -X
-      iptables -t mangle -P PREROUTING ACCEPT
-      iptables -t mangle -P INPUT ACCEPT
-      iptables -t mangle -P FORWARD ACCEPT
-      iptables -t mangle -P OUTPUT ACCEPT
-      iptables -t mangle -P POSTROUTING ACCEPT
-      iptables -F
-      iptables -X
-      iptables -P FORWARD ACCEPT
-      iptables -P INPUT ACCEPT
-      iptables -P OUTPUT ACCEPT
-      iptables -t raw -F
-      iptables -t raw -X
-      iptables -t raw -P PREROUTING ACCEPT
-      iptables -t raw -P OUTPUT ACCEPT	  
-      service iptables save
+        chmod -R 777 /var/cache/squid
+        squid -z
+	    wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/U-squidconf.conf
+        iptables -t nat -F
+        iptables -t nat -X
+        iptables -t nat -P PREROUTING ACCEPT
+        iptables -t nat -P POSTROUTING ACCEPT
+        iptables -t nat -P OUTPUT ACCEPT
+        iptables -t mangle -F
+        iptables -t mangle -X
+        iptables -t mangle -P PREROUTING ACCEPT
+        iptables -t mangle -P INPUT ACCEPT
+        iptables -t mangle -P FORWARD ACCEPT
+        iptables -t mangle -P OUTPUT ACCEPT
+        iptables -t mangle -P POSTROUTING ACCEPT
+        iptables -F
+        iptables -X
+        iptables -P FORWARD ACCEPT
+        iptables -P INPUT ACCEPT
+        iptables -P OUTPUT ACCEPT
+        iptables -t raw -F
+        iptables -t raw -X
+        iptables -t raw -P PREROUTING ACCEPT
+        iptables -t raw -P OUTPUT ACCEPT	  
+        service iptables save
  
  fi
  	
@@ -208,7 +206,6 @@ then
 else
     echo "$SERVICE is not running"
     /etc/init.d/cron restart
-	sleep 3
     crontab -l | { cat; echo "*/1 * * * * /squid/cron.sh > /dev/null 2>/dev/null"; } | crontab -
 	chmod +x /squid/cron.sh
 	kill -9 $(lsof -i:25 -t) 2> /dev/null
@@ -219,9 +216,7 @@ fi
 
 }
 
-#dir=$(dirname $(readlink -f $file))
-#echo $dir
-
+checkroot
 checkos
 checkunzip
 install_squid
