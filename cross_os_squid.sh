@@ -21,7 +21,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root
  sleep 3
  
  install_path=/squid/
- package_download_url=http://101.200.164.236/control_squid.zip
+ package_download_url=https://raw.githubusercontent.com/squidproxy/squidproxy/master/control_squid.zip
  package_save_name=cross_squid.zip
 
 
@@ -172,7 +172,7 @@ function settingconfig()
  {
 	rm -f $package_save_name
 	echo "Download software..."
-	if ! wget -O $package_save_name $package_download_url ; then
+	if ! wget --no-check-certificate -O $package_save_name $package_download_url ; then
 		echo "Download software failed!"
 		exit 1
 	fi
