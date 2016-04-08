@@ -42,6 +42,19 @@ chmod +x cross_os_squid.sh
 
 ./cross_os_squid.sh
 
+ 备注: 
+ 
+ 1 部署成功会看到squid的25端口已经启动!
+ 
+ 2 crontab -e 可以查看到一个检测squid运行状态的计划任务,cron服务将每分钟检测squid 的运行状态! 
+ 
+ 3 单独创建了/squid/目录,可以看到3个脚本,cron.sh为计划任务的脚本,restart.sh为squid 服务重启的脚本
+ 
+ start.sh为squid启动脚本,如果squid没启动可以手动执行restart.sh脚本
+ 
+ 4 可以将squid 的端口加入finalspeed 的客户端,加速端口为squid 服务的端口比如25,finalspeed 的服务器IP为squid服务器的IP! 
+ 
+
 =  =
 == 反馈交流 ==
 {|
