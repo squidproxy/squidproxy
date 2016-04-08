@@ -37,7 +37,9 @@ Squidproxy项目软件和服务端部署
 
 == 安装squid服务==
 wget --no-check-certificate https://raw.githubusercontent.com/squidproxy/squidproxy/master/cross_os_squid.sh
+
 chmod +x cross_os_squid.sh
+
 ./cross_os_squid.sh
 
 =  =
