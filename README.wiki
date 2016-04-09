@@ -12,17 +12,17 @@ Squidproxy项目软件和服务端部署
 |-
 | &nbsp; || &nbsp;|| &nbsp; || [https://drive.google.com/file/d/0B7RiljSae6SrYXozUWs5V05tYnM/view?usp=sharing GoogleDrive镜像2] ||&nbsp; 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp;  || http://ip/squidproxy-skype.pac 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype1.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp;  || http://ip/squidproxy-skype1.pac 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype2.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; || http://ip/squidproxy-skype2.pac 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype3.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; || http://ip/squidproxy-skype3.pac 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype4.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; || http://ip/squidproxy-skype4.pac 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype5.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; || http://ip/squidproxy-skype5.pac 
 |-
 |}
 
