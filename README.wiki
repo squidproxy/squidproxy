@@ -6,14 +6,13 @@ Squidproxy项目软件和服务端部署
 == 软件 ==
 
 {|
-! 软件 !! 版本 !! 技术 !! 下载 !! 
+! 软件 !! 版本 !! 技术 !! 下载  
 |-
 | '''Squidproxy''' || V2.0.0.21 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.21/squidproxy.exe github镜像1] 
 |-
 | &nbsp; || &nbsp;|| &nbsp; || [https://drive.google.com/file/d/0B7RiljSae6SrYXozUWs5V05tYnM/view?usp=sharing GoogleDrive镜像2] 
 |-
-| '''公共服务器''' || &nbsp;  || &nbsp;  ||   &nbsp;  || http://ip/squidproxy-skype.pac 
-|-
+| '''公共服务器''' || &nbsp;  || &nbsp;  ||   &nbsp;  
 | &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype1.pac  
 |-
 | &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype2.pac  
