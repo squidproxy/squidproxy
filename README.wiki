@@ -6,19 +6,27 @@ Squidproxy项目软件和服务端部署
 == 软件 ==
 
 {|
-! 软件 !! 版本 !! 技术 !! 下载
+! 软件 !! 版本 !! 技术 !! 下载 !! 公共服务器
 |-
-| '''Squidproxy''' || V2.0.0.17 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.17/squidproxy.exe github镜像1]
+| '''Squidproxy''' || V2.0.0.21 || Squid|| [https://github.com/squidproxy/squidproxy/releases/download/V2.0.0.21/squidproxy.exe github镜像1] ||&nbsp; 
 |-
-| &nbsp; || &nbsp;|| &nbsp; || [https://drive.google.com/file/d/0B7RiljSae6SrYXozUWs5V05tYnM/view?usp=sharing GoogleDrive镜像2]
+| &nbsp; || &nbsp;|| &nbsp; || [https://drive.google.com/file/d/0B7RiljSae6SrYXozUWs5V05tYnM/view?usp=sharing GoogleDrive镜像2] ||&nbsp; 
 |-
-| '''灯笼''' || V2.1.1 || P2P去中心化 ||  [https://s3.amazonaws.com/lantern/lantern-installer-beta.exe 下载镜像1] 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype.pac 
 |-
-| &nbsp; || &nbsp; || &nbsp; ||  [https://drive.google.com/file/d/0B7RiljSae6SrZ2RmbG4xQ2dTOHc/view?usp=sharing GoogleDrive镜像2] 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype1.pac 
 |-
-| '''Onesafe''' || V1.2.0 || Squid+obfs4 ||  [https://github.com/squidproxy/obfs4/releases/download/v1.0.0.1/obfsproxydl.exe 下载镜像1] 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype2.pac 
+|-
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype3.pac 
+|-
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype4.pac 
+|-
+| &nbsp;  || &nbsp;  || &nbsp;  ||   &nbsp; ] || http://ip/squidproxy-skype5.pac 
 |-
 |}
+
+备注: 获得公共服务器IP方法, 搜索skype : squidproxy1989 添加好友即可获得!
 
 =  =
 == 服务端 ==
@@ -72,7 +80,7 @@ chmod +x cross_os_squid.sh
 
 解决中文目录读取配置文件出错的bug
 
-一个高效轻松管理squid缓存服务器的客户端
+解决添加服务器后随系统启动功能取消的bug
 
 多服务器管理,支持添加、删除、编辑Squid服务器
 
