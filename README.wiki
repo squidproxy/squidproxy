@@ -14,15 +14,13 @@ Squidproxy项目软件和服务端部署
 |-
 | '''公共服务器''' || &nbsp;  || &nbsp;  ||   &nbsp;
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype1.pac  
+| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/skype1.pac  
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype2.pac  
+| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/skype2.pac  
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype3.pac 
+| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/skype3.pac 
 |-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype4.pac 
-|-
-| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/squidproxy-skype5.pac  
+| &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/skype4.pac 
 |-
 |}
 
