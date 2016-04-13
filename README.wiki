@@ -12,6 +12,8 @@ Squidproxy项目软件和服务端部署
 |-
 | &nbsp; || &nbsp;|| &nbsp; || [https://drive.google.com/file/d/0B7RiljSae6SrYXozUWs5V05tYnM/view?usp=sharing GoogleDrive镜像2] 
 |-
+| "电报群组" || &nbsp;|| &nbsp; || https://telegram.me/joinchat/DEpbFD44YPwpwIPCCkUb2g] 
+|-
 | '''公共服务器''' || &nbsp;  || &nbsp;  ||   &nbsp;
 |-
 | &nbsp;  || &nbsp;  || &nbsp;  ||   http://ip/skype1.pac  
@@ -24,7 +26,12 @@ Squidproxy项目软件和服务端部署
 |-
 |}
 
-备注: 获得公共服务器IP方法, 搜索skype : squidproxy1989 添加好友即可获得!
+备注:
+
+ 获得公共服务器IP方法
+ 
+ 1 搜索skype : squidproxy1989 添加好友即可获得!
+ 2 入电报群获取 https://telegram.me/joinchat/DEpbFD44YPwpwIPCCkUb2g
 
 =  =
 == 服务端 ==
@@ -71,6 +78,8 @@ chmod +x cross_os_squid.sh
 | '''博客''' || [http://obfs4.blogspot.com] || &nbsp; || &nbsp;
 |-
 | '''G+''' || [https://plus.google.com/communities/101513261063592651175] || &nbsp;|| &nbsp;
+|-
+| "电报群组" || https://telegram.me/joinchat/DEpbFD44YPwpwIPCCkUb2g] || &nbsp;|| &nbsp;
 |-
 |}
 
