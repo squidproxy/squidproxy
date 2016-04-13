@@ -79,7 +79,7 @@ chmod +x cross_os_squid.sh
 |-
 | '''G+''' || [https://plus.google.com/communities/101513261063592651175] || &nbsp;|| &nbsp;
 |-
-| '''电报群组''' || https://telegram.me/joinchat/DEpbFD44YPwpwIPCCkUb2g] || &nbsp;|| &nbsp;
+| '''电报群组''' || https://telegram.me/joinchat/DEpbFD44YPwpwIPCCkUb2g || &nbsp;|| &nbsp;
 |-
 |}
 
