@@ -55,6 +55,18 @@ chmod +x cross_os_squid.sh
 
 ./cross_os_squid.sh
 
+服务端更新内容:
+
+主要修正支持centos系统的脚本内容
+
+重新修正了结束squid服务错误的函数
+
+修正了cron计划任务
+
+开启瓦尔基里计划,关于计划内容加入电报群咨询!
+
+重新打包restart.sh、start.sh、cron.sh等脚本
+
  备注: 
  
  1 部署成功会看到squid的25端口已经启动!

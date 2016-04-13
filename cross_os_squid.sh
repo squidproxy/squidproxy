@@ -8,10 +8,12 @@
 
 export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root
  echo ""
- echo "================================================================================================="
+ echo "============================================================"
  echo " Github https://github.com/squidproxy/squidproxy"
- echo ""
- echo "================================================================================================="
+ echo "A man is either free or he is not."
+ echo "There cannot be any apprenticeship for freedom."
+ echo "                                    by -Baraka. French Writer"
+ echo "============================================================"
  sleep 3
  
  install_path=/squid/
@@ -105,7 +107,7 @@ function settingconfig()
 
 	if [[ $OS = "debian" ]]; then
 
-		echo "setting configurate on debian os.."		
+		echo "setup the configurations on debian os.."		
 	    mkdir /var/log/squid
         mkdir /var/cache/squid
         mkdir /var/spool/squid
@@ -119,7 +121,7 @@ function settingconfig()
 		
 		if [[ $OS = "ubuntu" ]]; then
 
-		echo "setting configurate on ubuntu os.."
+		echo "setup the configurations on ubuntu os.."
 		
 	    mkdir /var/log/squid
         mkdir /var/cache/squid
@@ -132,10 +134,11 @@ function settingconfig()
 		fi
 		
 		if [[ $OS = "centos" ]]; then
-		
+		echo " setup the configurations on centos os.."	
 		mkdir -p /var/cache/squid
         chmod -R 777 /var/cache/squid
         squid -z
+		
 	    wget --no-check-certificate -O /etc/squid/squid.conf https://raw.githubusercontent.com/squidproxy/squidproxy/master/Squidconf/U-squidconf.conf
         iptables -t nat -F
         iptables -t nat -X
@@ -161,7 +164,8 @@ function settingconfig()
         service iptables save
  
  fi
- 	
+ 
+	echo "setup the configurations on  $OS "
 
 }
 
@@ -182,8 +186,7 @@ function settingconfig()
 	fi
 	
 	unzip -o $package_save_name  -d $install_path
-	
-	bash ${install_path}"restart.sh"
+
 
 }
 
@@ -200,16 +203,36 @@ then
     echo "$SERVICE service running, everything is fine"
 	   crontab -r
 	   crontab -l | { cat; echo "*/1 * * * * /squid/cron.sh > /dev/null 2>/dev/null"; } | crontab -
-	   kill -9 $(lsof -i:25 -t) 2> /dev/null
+	   
+/bin/netstat -tulpn | awk '{print $4}' | awk -F: '{print $4}' | grep ^25$ > /dev/null   2>/dev/null
+ a=$(echo $?)
+ if test $a -ne 0
+ then
+sleep 0
+ else
+ netstat -anp --numeric-ports | grep ":25\>.*:" | grep -o "[0-9]*/" | sed 's+/$++' | xargs -d '\n' kill -KILL
+ fi
+ 
+	  
 	   chmod +x /squid/cron.sh
-	   bash /squid/restart.sh
+	   
+		bash ${install_path}"restart.sh"
 else
     echo "$SERVICE is not running"
     /etc/init.d/cron restart
     crontab -l | { cat; echo "*/1 * * * * /squid/cron.sh > /dev/null 2>/dev/null"; } | crontab -
 	chmod +x /squid/cron.sh
-	kill -9 $(lsof -i:25 -t) 2> /dev/null
-	bash /squid/restart.sh
+	
+	/bin/netstat -tulpn | awk '{print $4}' | awk -F: '{print $4}' | grep ^25$ > /dev/null   2>/dev/null
+ a=$(echo $?)
+ if test $a -ne 0
+ then
+sleep 0
+ else
+ netstat -anp --numeric-ports | grep ":25\>.*:" | grep -o "[0-9]*/" | sed 's+/$++' | xargs -d '\n' kill -KILL
+ fi
+ 
+	bash ${install_path}"restart.sh"
 
 	
 fi
