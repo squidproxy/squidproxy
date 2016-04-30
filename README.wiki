@@ -1,12 +1,11 @@
 
-Squidproxy项目软件和服务端部署
+squid:一个支持obfsproxy混淆技术的缓存代理技术
 
+== 服务端 ==
+[https://plus.google.com/communities/101513261063592651175 进入获取]
 
-==== 服务端 ====
-[进入获取 https://plus.google.com/communities/101513261063592651175]
-
-====客户端 ====
-[进入获取 https://plus.google.com/communities/101513261063592651175]
+== 客户端 ==
+[https://plus.google.com/communities/101513261063592651175 进入获取]
 
 == 作者 ==
 
