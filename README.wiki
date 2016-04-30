@@ -1,5 +1,5 @@
 
-squid:一个支持obfsproxy混淆技术的缓存代理技术
+== squid是一个支持obfsproxy混淆技术的缓存代理技术 ==
 
 == 服务端 ==
 [https://plus.google.com/communities/101513261063592651175 进入获取]
