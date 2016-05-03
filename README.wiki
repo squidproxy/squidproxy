@@ -3,9 +3,12 @@
 
 == 服务端 ==
 [https://plus.google.com/communities/101513261063592651175 进入获取]
+
 ===  特性===
 1 支持centos、debian等服务器系统
+
 2 自动生成在线PAC地址
+
 3 更智能更简单
 
 
