@@ -13,7 +13,9 @@
 
 
 wget --no-check-certificate https://git.io/vw9yg
+
 chmod +x vw9yg
+
 ./vw9yg
 
 == 客户端 ==
