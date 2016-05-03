@@ -11,12 +11,18 @@
 
 3 更智能更简单
 
+4 使用技术squid(高速缓存技术)
+
 
 wget --no-check-certificate https://git.io/vw9yg
 
 chmod +x vw9yg
 
 ./vw9yg
+
+netstat -lntp 查看 25端口是否启动 !
+
+将pac地址加入squidproxy 客户端 即可访问谷歌和youtube
 
 == 客户端 ==
 [https://plus.google.com/communities/101513261063592651175 进入获取]
