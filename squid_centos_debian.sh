@@ -42,6 +42,14 @@ function checkroot()
 	echo $OS
 }
 
+##### echo
+function print_xxxx(){
+    xXxX="#############################"
+    echo
+    echo "$xXxX$xXxX$xXxX$xXxX"
+    echo
+}
+
 function install_lsof(){
 
     print_info "installing  lsof package on linux"
@@ -103,6 +111,32 @@ function install_squid()
 		fi
 }
 
+function firewall_rules(){
+
+        iptables -t nat -F
+        iptables -t nat -X
+        iptables -t nat -P PREROUTING ACCEPT
+        iptables -t nat -P POSTROUTING ACCEPT
+        iptables -t nat -P OUTPUT ACCEPT
+        iptables -t mangle -F
+        iptables -t mangle -X
+        iptables -t mangle -P PREROUTING ACCEPT
+        iptables -t mangle -P INPUT ACCEPT
+        iptables -t mangle -P FORWARD ACCEPT
+        iptables -t mangle -P OUTPUT ACCEPT
+        iptables -t mangle -P POSTROUTING ACCEPT
+        iptables -F
+        iptables -X
+        iptables -P FORWARD ACCEPT
+        iptables -P INPUT ACCEPT
+        iptables -P OUTPUT ACCEPT
+        iptables -t raw -F
+        iptables -t raw -X
+        iptables -t raw -P PREROUTING ACCEPT
+        iptables -t raw -P OUTPUT ACCEPT	  
+        service iptables save
+
+}
 
 function settingconfig()
 
@@ -186,12 +220,32 @@ function check_squidconf(){
 }
 
 
+function start_squid(){
+
+	if [[ $OS = "ubuntu" ]]; then
+		    print_info " start squid service..."
+			service restart squid3 && print_info "restart squid service success on $OS"
+		fi
+		if [[ $OS = "debian" ]]; then
+			print_info " start squid service..."
+			service restart squid3 && print_info "restart squid service success on $OS"
+		fi
+		if [[ $OS = "centos" ]]; then
+			print_info " start squid service..."
+			systemctl restart squid && print_info "restart squid service success on $OS"
+		fi
+
+
+}
 
 function check_port(){
 print_info "check squid status........................."
-lsof -i:25 && print_info "squid start ...success" || print_warn "squid start ...failure"
+lsof -i:25 && print_info "squid start ...success" || start_squid
 
 }
+
+
+
 function install_web(){
 
 
@@ -331,10 +385,35 @@ print_info "squid port: 25"
 
 print_info "Squid Server ip $Serverip"
 
-
+lsof -i:25 > /dev/null 2>/dev/null && print_info "squid status ...ok" || print_warn "squid start ...failure" 
 
 }
 
+function help_ocservauto(){
+    print_xxxx
+    print_info "######################## Parameter Description ####################################"
+    echo
+    print_info " install ----------------------- Install squid  for Debian centos"
+    echo
+    print_info " gp   ---------------- auto generate online pac address "
+    echo
+    print_info " rs --------------- remove squid service on os "
+    echo
+    print_info " help or h --------------------- Show this description"
+    print_xxxx
+}
+
+function remove_squid(){
+
+
+yum remove squid -y
+}
+
+#Initialization step
+action=$1
+[  -z $1 ] && action=install
+case "$action" in
+install)
 checkroot
 checkos
 check_package
@@ -346,3 +425,22 @@ check_apache2
 check_httpd_status
 fetch_pac
 replace_pac_string
+    ;;
+rs)
+remove_squid
+    ;;
+gp)
+fetch_pac
+replace_pac_string
+    ;;
+help | h)
+    clear
+    help_ocservauto
+    ;;
+*)
+    clear
+    print_warn "Arguments error! [ ${action} ]"
+    print_warn "Usage:  bash `basename $0` {gp|help|rs}"
+    help_ocservauto
+    ;;
+esac
