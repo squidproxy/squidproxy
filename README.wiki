@@ -22,7 +22,7 @@ wget --no-check-certificate https://git.io/vw9yg -O squid.sh && bash squid.sh
 
 雪豹v1.0.7.28
 
- [ https://goo.gl/UlePlI ]
+[https://goo.gl/UlePlI]
 
 1 免费使用
 
