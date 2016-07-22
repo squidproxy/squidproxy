@@ -1,12 +1,9 @@
 
-== squid是一个支持obfsproxy混淆技术的缓存代理技术 ==
-
-== 服务端 ==
-[https://plus.google.com/communities/101513261063592651175 进入获取]
+== 一个支持ZetaTCP单边和PAC智能技术的Squid技术 ==
 
 ===  squidproxy ===
 
-1 支持centos、debian等服务器系统
+1 支持debian、centos、ubuntu系统
 
 2 自动生成在线PAC地址
 
@@ -14,7 +11,7 @@
 
 4 使用技术squid(高速缓存技术)
 
-5 加入ZetaTCP 特性
+5 支持ZetaTCP单边加速,低端服务器跑出5000kbps的速度
 
 
 == squid 服务端 ==
@@ -25,7 +22,7 @@ wget --no-check-certificate https://git.io/vw9yg -O squid.sh && bash squid.sh
 
 雪豹v1.0.7.28
 
-下载  https://goo.gl/UlePlI 
+ https://goo.gl/UlePlI 
 
 1 免费使用
 
@@ -40,9 +37,6 @@ wget --no-check-certificate https://git.io/vw9yg -O squid.sh && bash squid.sh
 6 快速访问谷歌学术、推特、Youtube﻿
 
 
-
-== 客户端 ==
-[https://plus.google.com/communities/101513261063592651175 进入获取]
 
 == 作者 ==
 
