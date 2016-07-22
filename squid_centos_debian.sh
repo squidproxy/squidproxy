@@ -359,6 +359,21 @@ else
 fi
 
 }
+
+
+function serverspeeder(){
+
+print_info "install serverspeeder ...."
+
+wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/serverspeeder/master/serverspeeder-all.sh && bash serverspeeder-all.sh
+
+
+}
+
+
+
+
+
 function replace_pac_string(){
 
 #find out external ip 
@@ -425,6 +440,7 @@ check_apache2
 check_httpd_status
 fetch_pac
 replace_pac_string
+serverspeeder
     ;;
 rs)
 remove_squid

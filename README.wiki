@@ -4,7 +4,8 @@
 == 服务端 ==
 [https://plus.google.com/communities/101513261063592651175 进入获取]
 
-===  特性===
+===  squidproxy ===
+
 1 支持centos、debian等服务器系统
 
 2 自动生成在线PAC地址
@@ -13,16 +14,32 @@
 
 4 使用技术squid(高速缓存技术)
 
+5 加入ZetaTCP 特性
 
-wget --no-check-certificate https://git.io/vw9yg
 
-chmod +x vw9yg
+== squid 服务端 ==
 
-./vw9yg
+wget --no-check-certificate https://git.io/vw9yg -O squid.sh && bash squid.sh
 
-netstat -lntp 查看 25端口是否启动 !
+===  雪豹 ===
 
-将pac地址加入squidproxy 客户端 即可访问谷歌和youtube
+雪豹v1.0.7.28
+
+下载  https://goo.gl/UlePlI 
+
+1 免费使用
+
+2 基于鱿鱼技术
+
+3 智能加速
+
+4 基于VS2015平台开发
+
+5 支持火狐、chrome、IE等浏览器
+
+6 快速访问谷歌学术、推特、Youtube﻿
+
+
 
 == 客户端 ==
 [https://plus.google.com/communities/101513261063592651175 进入获取]
