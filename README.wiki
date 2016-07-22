@@ -1,15 +1,15 @@
 
 == 一个支持ZetaTCP单边和PAC智能技术的Squid技术 ==
 
-===  squidproxy ===
+===  squid支持如下特性 ===
 
 1 支持debian、centos、ubuntu系统
 
-2 自动生成在线PAC地址
+2 squid技术加载youtube的性能远远超过SS的性能，我们只是尚未发现
 
-3 更智能更简单
+3 部署更简单
 
-4 使用技术squid(高速缓存技术)
+4 加载视频更加彻底
 
 5 支持ZetaTCP单边加速,低端服务器跑出5000kbps的速度
 
@@ -22,7 +22,7 @@ wget --no-check-certificate https://git.io/vw9yg -O squid.sh && bash squid.sh
 
 雪豹v1.0.7.28
 
- https://goo.gl/UlePlI 
+ [ https://goo.gl/UlePlI ]
 
 1 免费使用
 
